@@ -1,1 +1,1 @@
-# Sample Zoho CRM Android App
+# Zoho CRM Android SDK Sample App
