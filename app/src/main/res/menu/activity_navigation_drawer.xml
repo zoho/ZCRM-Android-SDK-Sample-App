@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/homepage"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Home" />
+        <item
+            android:id="@+id/customers"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Customers" />
+        <item
+            android:id="@+id/tasks"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Tasks" />
+        <item
+            android:id="@+id/events"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Events" />
+        <item
+            android:id="@+id/calls"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Calls" />
+
+        <item android:title="Settings">
+            <menu>
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/logout"
+                        android:icon="@drawable/ic_menu_send"
+                        android:title="Logout"
+                        android:onClick="logout_click"/>
+                </group>
+            </menu>
+        </item>
+    </group>
+
+
+
+</menu>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+   <!-- <item
+        android:id="@+id/edit"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="@string/Edit"
+        android:showAsAction="always"
+        android:visible="true"
+        android:actionProviderClass="android.widget.ShareActionProvider"
+        />
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/ic_menu_manage"
+        android:title="@string/Delete"
+        android:showAsAction="always"
+        android:visible="true"
+        android:actionProviderClass="android.widget.ShareActionProvider"
+        /> -->
+</menu>
