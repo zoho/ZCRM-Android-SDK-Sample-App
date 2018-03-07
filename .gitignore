@@ -8,7 +8,6 @@
 app/build
 /captures
 app/roguard-rules.pro
-app/libs
 out/
 .idea/
 app/src/main/res/drawable/
