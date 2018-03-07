@@ -1,0 +1,16 @@
+*.iml
+.gradle
+/gradle.properties
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+app/build
+/captures
+app/roguard-rules.pro
+app/libs
+out/
+.idea/
+app/src/main/res/drawable/
+.gitignore.swp
+app/proguard-rules.pro
