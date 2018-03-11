@@ -1,4 +1,4 @@
-package com.zoho.testconfig;
+package com.zoho.sample_app;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,11 +6,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.zoho.crm.library.common.CommonUtil;
 import com.zoho.crm.library.crud.ZCRMRecord;
 import com.zoho.crm.library.exception.ZCRMException;
+import com.zoho.crm.library.exception.ZCRMLogger;
+
 import java.util.Iterator;
 
-public class CustomersListHandler extends ListViewHandler
+public class EventsListHandler extends ListViewHandler
 {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 	{
@@ -43,7 +47,8 @@ public class CustomersListHandler extends ListViewHandler
 		}
 
 		@Override
-		public View getView(int position, View view, ViewGroup parent) {
+		public View getView(int position, View view, ViewGroup parent)
+        {
 			if (view == null)
 			{
 				view = getActivity().getLayoutInflater().inflate(R.layout.records_list, parent, false);
@@ -52,39 +57,43 @@ public class CustomersListHandler extends ListViewHandler
 			try
             {
 				TextView name = (TextView) view.findViewById(R.id.textView4);
-                String fullName = "";
-                if(record.getFieldValue("First_Name") != null)
-                {
-                    fullName += record.getFieldValue("First_Name") + " ";
-                }
-                fullName += record.getFieldValue("Last_Name");
-				name.setText(fullName);
+				name.setText((CharSequence) record.getFieldValue("Event_Title"));
 
-                String email, mobile;
-                if(record.getFieldValue("Email") == null)
+                String venue, time;
+                if (record.getFieldValue("Venue") == null)
                 {
-                    email = "No Email";
+                    venue = "No Venue";
                 }
                 else
                 {
-                    email = record.getFieldValue("Email").toString();
+                    venue = record.getFieldValue("Venue").toString();
                 }
-                if(record.getFieldValue("Mobile") == null)
+
+                if(record.getFieldValue("Start_DateTime") == null || record.getFieldValue("End_DateTime") == null)
                 {
-                    mobile = "No Mobile";
+                    time = "No proper time";
                 }
                 else
                 {
-                    mobile = record.getFieldValue("Mobile").toString();
+                    try
+                    {
+                        time = CommonUtil.isoStringToGMTTimestamp(record.getFieldValue("Start_DateTime").toString()) + "  TO  " + CommonUtil.isoStringToGMTTimestamp(record.getFieldValue("End_DateTime").toString());
+                    }
+                    catch (Exception ex)
+                    {
+                        ZCRMLogger.logError(ex);
+                        time = record.getFieldValue("Start_DateTime") + " TO " + record.getFieldValue("End_DateTime");
+                    }
                 }
-                TextView phone = (TextView) view.findViewById(R.id.textView5);
-				phone.setText(mobile);
-				TextView emailView = (TextView) view.findViewById(R.id.textView6);
-				emailView.setText(email);
-			} catch (ZCRMException e) {
+				TextView locationView = (TextView) view.findViewById(R.id.textView5);
+				locationView.setText(venue);
+				TextView timeView = (TextView) view.findViewById(R.id.textView6);
+				timeView.setText(time);
+			}
+            catch (ZCRMException e)
+            {
 				e.printStackTrace();
 			}
-
 			return view;
 		}
 	}

@@ -1,16 +1,13 @@
-package com.zoho.testconfig;
+package com.zoho.sample_app;
 
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
-import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.SystemClock;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
 import android.widget.GridLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -21,11 +18,8 @@ import com.zoho.crm.library.crud.ZCRMModule;
 import com.zoho.crm.library.crud.ZCRMRecord;
 import com.zoho.crm.library.crud.ZCRMSection;
 import com.zoho.crm.library.exception.ZCRMException;
-import com.zoho.crm.library.setup.users.ZCRMUser;
-import com.zoho.crm.sdk.android.zcrmandroid.crud.ZCRMForm;
 
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Iterator;

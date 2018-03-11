@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.zoho.testconfig"
+    package="com.zoho.sample_app"
     android:versionCode="1"
     android:versionName="1.0">
     <application
@@ -12,15 +12,15 @@
         tools:replace="android:allowBackup">
 
         <activity
-            android:name=".NavigationDrawer"
+            android:name="com.zoho.sample_app.NavigationDrawer"
             android:label="Navigation Drawer"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <activity android:name=".RecordViewHandler"
-                  android:parentActivityName=".NavigationDrawer"/>
+        <activity android:name="com.zoho.sample_app.RecordViewHandler"
+                  android:parentActivityName="com.zoho.sample_app.NavigationDrawer"/>
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".NavigationDrawer" />
+            android:value="com.zoho.sample_app.NavigationDrawer" />
 
     </application>
     <uses-permission android:name="android.permission.INTERNET"/>

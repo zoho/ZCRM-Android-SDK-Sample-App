@@ -1,4 +1,4 @@
-package com.zoho.testconfig;
+package com.zoho.sample_app;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

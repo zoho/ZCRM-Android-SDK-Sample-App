@@ -1,4 +1,4 @@
-package com.zoho.testconfig;
+package com.zoho.sample_app;
 
 import android.app.Fragment;
 import android.content.Intent;

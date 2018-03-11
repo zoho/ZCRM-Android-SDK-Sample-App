@@ -1,8 +1,10 @@
-package com.zoho.testconfig;
+package com.zoho.sample_app;
 
 import android.annotation.TargetApi;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,12 +17,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.zoho.crm.library.exception.ZCRMException;
 import com.zoho.crm.library.setup.restclient.ZCRMRestClient;
 import com.zoho.crm.library.setup.users.ZCRMUser;
 import com.zoho.crm.sdk.android.zcrmandroid.activity.ZCRMBaseActivity;
+
+import java.io.IOException;
 
 public class NavigationDrawer extends ZCRMBaseActivity
 		implements NavigationView.OnNavigationItemSelectedListener {
@@ -31,6 +36,7 @@ public class NavigationDrawer extends ZCRMBaseActivity
 	public static int setTabno = 0;
 	public int Tabno = setTabno;
 	public int count =0;
+	Bitmap userPhoto;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +58,8 @@ public class NavigationDrawer extends ZCRMBaseActivity
 		try {
 			count++;
 			user = (ZCRMUser)  ZCRMRestClient.getInstance().getCurrentUser().getData();
-		} catch (ZCRMException e) {
+			userPhoto = BitmapFactory.decodeStream(user.downloadProfilePic().getFileAsStream());
+		} catch (ZCRMException | IOException e) {
 			e.printStackTrace();
 		}
 	}
@@ -69,6 +76,8 @@ public class NavigationDrawer extends ZCRMBaseActivity
 		navigationView.setNavigationItemSelectedListener(this);
 		View header=navigationView.getHeaderView(0);
 
+		ImageView photo = header.findViewById(R.id.userimage);
+		photo.setImageBitmap(userPhoto);
 		TextView username = header.findViewById(R.id.username);
 		username.setText(String.valueOf(user.getFullName()));
 		TextView usermail = header.findViewById(R.id.usermail);
