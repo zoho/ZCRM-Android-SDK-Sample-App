@@ -46,7 +46,7 @@ dependencies {
     compile "com.android.support:support-core-utils:26.+"
 
 
-    compile(name: 'ZCRMAndroid_V1_0', ext: 'aar') { transitive = true }
+    compile(name: 'ZCRMAndroid_V1_1', ext: 'aar') { transitive = true }
     compile(name: 'ZIAMAndroid_V2_5', ext: 'aar') { transitive = true }
     compile(name: 'ZVIAMAndroid_V2_12', ext: 'aar') { transitive = true }
 }

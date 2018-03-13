@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TestConfig</string>
+    <string name="app_name">ZCRM Android SDK SampleApp</string>
    <!-- <string name="custom_title">TestConfig</string>-->
 
     <string name="url_scheme">zohosdk</string>

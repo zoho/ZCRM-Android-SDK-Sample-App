@@ -20,6 +20,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.zoho.crm.library.common.CommonUtil;
 import com.zoho.crm.library.exception.ZCRMException;
 import com.zoho.crm.library.setup.restclient.ZCRMRestClient;
 import com.zoho.crm.library.setup.users.ZCRMUser;
@@ -58,7 +59,7 @@ public class NavigationDrawer extends ZCRMBaseActivity
 		try {
 			count++;
 			user = (ZCRMUser)  ZCRMRestClient.getInstance().getCurrentUser().getData();
-			userPhoto = BitmapFactory.decodeStream(user.downloadProfilePic().getFileAsStream());
+			userPhoto = BitmapFactory.decodeStream(user.downloadProfilePic(CommonUtil.PhotoSize.thumb).getFileAsStream());
 		} catch (ZCRMException | IOException e) {
 			e.printStackTrace();
 		}
