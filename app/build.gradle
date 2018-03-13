@@ -6,7 +6,7 @@ android {
     buildToolsVersion '26.0.2'
 
     defaultConfig {
-        applicationId "com.zoho.testconfig"
+        applicationId "com.zoho.sample_app"
         minSdkVersion 18
         targetSdkVersion 26
         versionCode 1
