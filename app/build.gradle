@@ -34,11 +34,4 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
 
     implementation 'com.zoho.crm:android-sdk:1.1.9'
-
-//    implementation "com.squareup.okhttp3:okhttp:4.8.0"
-//    implementation 'com.android.volley:volley:1.1.0'
-//    implementation "androidx.browser:browser:1.2.0"
-//    implementation name: 'zaccountsclientportalsdk' , ext: 'aar'
-//    implementation name: 'zaccountssdk_V1_2' , ext: 'aar'
-//    implementation name: 'sdk2' , ext: 'aar'
 }
