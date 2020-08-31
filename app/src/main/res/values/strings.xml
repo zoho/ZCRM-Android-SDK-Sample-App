@@ -1,14 +1,16 @@
 <resources>
-    <string name="app_name">ZCRM Android SDK SampleApp</string>
-   <!-- <string name="custom_title">TestConfig</string>-->
-
-    <string name="url_scheme">zohosdk</string>
-    // zoho
-    <string name="accounts_url">https://accounts.zoho.com</string>
-    <string name="c_id">1000.4SMTEZGRQ8U481228UDX0Z6SFHWM32</string>
-    <string name="c_secret">d202ec643d2576ce6afa9e5aacc8dbaaf8a604f49b</string>
-    <string name="redir_url">zohosdk://</string>
+    <string name="app_name">___VARIABLE_AppName___</string>
+    <string name="custom_title">___VARIABLE_AppName___</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+     <string name="contacts">Contacts</string>
+    <string name="tasks">Tasks</string>
+    <string name="user_name">Welcome </string>
+    <string name="todo">TODO</string>
+
+    <string name="redir_url">___VARIABLE_RedirectURLScheme___://</string>
+    <string name="url_scheme">___VARIABLE_URLScheme___</string>
+
 </resources>

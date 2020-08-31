@@ -19,23 +19,17 @@
             android:layout_marginRight="5dp" />
     </LinearLayout>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:orientation="vertical"
-                  android:layout_width="fill_parent"
-                  android:layout_height="match_parent">
-                  <!--android:layout_above="@+id/buttonlayout" -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!--android:layout_above="@+id/buttonlayout" -->
 
-        <android.support.v4.widget.SwipeRefreshLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/modulerefresh"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
         <ListView
+            android:id="@+id/listView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/listView"
             android:layout_gravity="center_horizontal" />
-        </android.support.v4.widget.SwipeRefreshLayout>
 
     </LinearLayout>
 
